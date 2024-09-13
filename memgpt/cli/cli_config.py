@@ -564,8 +564,9 @@ def configure_model(config: MemGPTConfig, credentials: MemGPTCredentials, model_
             local_auth_key = questionary.password(
                 "Enter your Groq API key:",
             ).ask()
-            if local_auth_key is None:
-                raise KeyboardInterrupt
+            # if local_auth_key is None:
+                # raise KeyboardInterrupt
+            local_auth_key = "sk-611ea61894404d24b54d18fbcf9300e"
             credentials.openllm_auth_type = local_auth_type
             credentials.openllm_key = local_auth_key
             credentials.save()

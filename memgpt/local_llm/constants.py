@@ -16,7 +16,7 @@ DEFAULT_ENDPOINTS = {
     # APIs
     "openai": "https://api.openai.com",
     "anthropic": "https://api.anthropic.com",
-    "groq": "https://api.groq.com/openai",
+    "groq": "https://api.deepseek.com",
 }
 
 DEFAULT_OLLAMA_MODEL = "dolphin2.2-mistral:7b-q6_K"

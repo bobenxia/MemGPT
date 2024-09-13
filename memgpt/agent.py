@@ -352,6 +352,16 @@ class Agent(BaseAgent):
             else:
                 printd(f"Warning - message ID {msg_id} not found in recall storage")
                 warnings.warn(f"Warning - message ID {msg_id} not found in recall storage")
+                
+        # message_objs = [self.persistence_manager.recall_memory.storage.get(msg_id) for msg_id in message_ids]
+        # # print(message_objs)
+        # new_message_objs = []
+        # for i, msg in enumerate(message_objs):
+        #     # print(f"index: {i}, \nmsg: {msg}\n\n\n")
+        #     if msg:
+        #         new_message_objs.append(msg)
+        # message_objs = new_message_objs
+        # assert all([isinstance(msg, Message) for msg in message_objs])
 
         return message_objs
 
@@ -1372,6 +1382,8 @@ class Agent(BaseAgent):
 
 def save_agent(agent: Agent, ms: MetadataStore):
     """Save agent to metadata store"""
+    print(f"agent: {agent}")
+    print(f"ms: {ms}")
 
     agent.update_state()
     agent_state = agent.agent_state

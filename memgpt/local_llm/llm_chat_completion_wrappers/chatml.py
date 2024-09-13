@@ -291,13 +291,13 @@ class ChatMLInnerMonologueWrapper(LLMChatCompletionWrapper):
             }
         }
         """
-        # if self.include_opening_brance_in_prefix and raw_llm_output[0] != "{":
-        # raw_llm_output = "{" + raw_llm_output
-        assistant_prefix = self.assistant_prefix_extra_first_message if first_message else self.assistant_prefix_extra
-        if assistant_prefix and raw_llm_output[: len(assistant_prefix)] != assistant_prefix:
-            # print(f"adding prefix back to llm, raw_llm_output=\n{raw_llm_output}")
-            raw_llm_output = assistant_prefix + raw_llm_output
-            # print(f"->\n{raw_llm_output}")
+        # # if self.include_opening_brance_in_prefix and raw_llm_output[0] != "{":
+        # # raw_llm_output = "{" + raw_llm_output
+        # assistant_prefix = self.assistant_prefix_extra_first_message if first_message else self.assistant_prefix_extra
+        # if assistant_prefix and raw_llm_output[: len(assistant_prefix)] != assistant_prefix:
+        #     # print(f"adding prefix back to llm, raw_llm_output=\n{raw_llm_output}")
+        #     raw_llm_output = assistant_prefix + raw_llm_output
+        #     # print(f"->\n{raw_llm_output}")
 
         try:
             function_json_output = clean_json(raw_llm_output)
